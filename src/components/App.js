@@ -1,6 +1,6 @@
 
 import React, { Component, useState } from "react";
-import '../styles/App.css';
+// import '../styles/App.css';
 
 class App extends Component {
   constructor(props) {
@@ -39,9 +39,15 @@ class App extends Component {
 
   render() {
     return (
-      <div id="main">
-        {/* Do not remove the main div */}
-      </div>
+      <>
+        <div id="main">
+          {this.cityList.filter(text => text.country === "India")
+            .map((filteredCountry, index) => (
+              <li key={index}>name:{filteredCountry.name}, country: {filteredCountry.country}</li>
+            ))}
+            
+        </div>
+      </>
     )
   }
 }
